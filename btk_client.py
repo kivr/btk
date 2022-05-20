@@ -1,5 +1,4 @@
 import dbus
-import evdev
 import keymap
 from time import sleep
 
@@ -82,7 +81,7 @@ class Kbrd:
 
     def update_mouse(self, x, y, button):
         self.dx = self.clean_axis_value((x - self.x) * 10)
-        self.dy = self.clean_axis_value((y - self.y) * 20)
+        self.dy = self.clean_axis_value((y - self.y) * 25)
         self.x = x
         self.y = y
         self.button = 1 if button == curses.BUTTON1_PRESSED or button == curses.BUTTON1_CLICKED else 0 if button != 0x10000000 else self.button
